@@ -9,7 +9,7 @@ VOLUME ["/deploy"]
 WORKDIR /deploy
 
 RUN apk update
-RUN apk add jq python bash ca-certificates git openssl openssh-client zip wget gettext
+RUN apk add jq python bash ca-certificates git openssl openssh-client zip curl wget gettext
 
 RUN ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
 RUN apk -Uuv add groff less python py-pip
