@@ -25,8 +25,8 @@ RUN cd /tmp && \
     wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \
     wget -LO /usr/bin/yq https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64 && \
-    chmod +x /usr/bin/yq
-RUN rm -rf /tmp/*
+    chmod +x /usr/bin/yq && \
+    rm -rf /tmp/*
 
 ENV SOCKET_DIR /root/.ssh-agent
 ENV SSH_AUTH_SOCK ${SOCKET_DIR}/socket
